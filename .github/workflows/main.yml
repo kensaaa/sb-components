@@ -1,1 +1,39 @@
-name: CI
+#  nombre
+name: Semantic Release
+
+# el flujo de control se dipara cuando ...
+on:
+  # cuando se hace un push
+  push:
+    branches: [ main ]
+  # cuando se hace un pull
+  pull_request: 
+    branches: [ main ]
+
+
+jobs:
+  build:
+    # esto lo dejamos actions esta corriendo version de ubuntu
+    runs-on: ubuntu-latest
+
+    # pasos que queremos ejecutar
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18.16.0
+
+      # instala nuestras dependencia de nuestro proyecto
+      - name: Install Dependencies
+        run: yarn install
+
+      - name: Build App
+        run: yarn build
+
+      - name: Semantic Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release
+
