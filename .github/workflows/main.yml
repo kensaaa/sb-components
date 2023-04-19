@@ -1,5 +1,7 @@
 # This is a basic workflow to help you get started with Actions
-
+permissions:
+    contents: write
+    
 name: Semantic Release
 
 # Controls when the workflow will run
@@ -36,4 +38,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release --branches main
+        run: npx semantic-release
