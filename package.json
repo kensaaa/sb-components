@@ -6,8 +6,8 @@
 	"typings": "dist/index.d.ts",
 	"main": "dist/index.js",
 	"repository": {
-		"url": "https://github.com/kensaaa/sb-components",
-		"type": "git"
+		"type": "git",
+		"url": "https://github.com/kensaaa/sb-components.git"
 	},
 	"type": "module",
 	"release": {
