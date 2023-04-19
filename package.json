@@ -6,7 +6,7 @@
 	"typings": "dist/index.d.ts",
 	"main": "dist/index.js",
 	"repository": {
-		"url": "https://github.com/kensaaa/sb-components",
+		"url": "https://github.com/kensaaa/sb-components.git",
 		"type": "git"
 	},
 	"type": "module",
